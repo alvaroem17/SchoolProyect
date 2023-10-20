@@ -27,11 +27,12 @@ Create .env file to your own settings. To start the api server just run:
 
 | METHOD | ENDPOINT                  | TOKEN | ROLE  | DESCRIPTION                  | POST PARAMS                | RETURNS                              |
 | ------ | ------------------------- | ----- | ----- | ---------------------------- | -------------------------- | ------------------------------------ |
-| GET    | /members                  | YES   | Admin | Get all users                | -                          | [{ member }]                         |
-| GET    | /members/:memberId        | YES   | Members | Get one user               | member_id                  | { member }                           |
-| PUT    | /members/:memberId        | YES   | Members | Update user                | member_id                  | "Member updated"                     |
-| POST   | /members                  | YES   | Admin | Create one user            | req.body                   | "Member created"                     |
-| DELETE | /members/:memberId        | YES   | Members | Remove one user            | member_id                  | "Member deleted"                     |
+| GET    | /students                  | YES   | Admin,professor | Get all users                | -                          | [{ student }]                         |
+| GET    | /students/:studentId        | YES   | Admin,professor | Get one user               | student_id                  | { student }                           |
+| GET    | /students/:studentId/contactInfo       | YES   | Admin | Get one user contactInfo              | student_id                  | { student,contactInfo }                           |
+| PUT    | /students/:studentId        | YES   | Admin | Update user                | student_id                  | "Student updated"                     |
+| POST   | /students                  | YES   | Admin | Create one user            | req.body                   | "Student created"                     |
+| DELETE | /students/:studentId        | YES   | Admin | Remove one user            | student_id                  | "Member deleted"                     |
 
 ### Employees
 
