@@ -90,11 +90,16 @@ To get started with the School Administration API, just get into the repo and :
 
 # Technologies
 
-- ![Node.js](url_de_la_imagen_de_Node.js) Node.js
-- ![Express](url_de_la_imagen_de_Express) Express
-- ![Sequelize](url_de_la_imagen_de_Sequelize) Sequelize
-- ![MySQL](url_de_la_imagen_de_MySQL) MySQL
-- ![JavaScript](url_de_la_imagen_de_JavaScript) JavaScript (JS)
+- ![Node.js](![image](https://github.com/alvaroem17/SchoolProyect/assets/140712461/c53b0d43-b381-49a4-bffa-788e24723bde)
+) Node.js
+- ![Express](![image](https://github.com/alvaroem17/SchoolProyect/assets/140712461/d00f3a44-af52-4168-a975-bd2607c78629)
+) Express
+- ![Sequelize](![image](https://github.com/alvaroem17/SchoolProyect/assets/140712461/029868f0-fe4f-4986-bfde-1a3cfa0b2fef)
+) Sequelize
+- ![MySQL](![image](https://github.com/alvaroem17/SchoolProyect/assets/140712461/a5dadfeb-52a7-4230-9c9c-930d4b2b4617)
+) MySQL
+- ![JavaScript](![image](https://github.com/alvaroem17/SchoolProyect/assets/140712461/cf38245e-be43-49dc-b874-e7bc4a94e5fc)
+) JavaScript (JS)
 
 
 # Authors
