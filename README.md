@@ -106,8 +106,8 @@ Create .env file to your own settings. To start the api server just run:
 
 | METHOD | ENDPOINT                  | TOKEN | ROLE  | DESCRIPTION                  | POST PARAMS                | RETURNS                              |
 | ------ | ------------------------- | ----- | ----- | ---------------------------- | -------------------------- | ------------------------------------ |
-| GET    | /inventories                  | YES   | Admin | Get all inventories                | -                          | [{ inventory }]                         |
-| GET    | /inventories/:inventoryId        | YES   | Admin | Get one inventory               | inventory_id                  | { inventory }                           |
+| GET    | /inventories                  | YES   | Admin, Professor | Get all inventories                | -                          | [{ inventory }]                         |
+| GET    | /inventories/:inventoryId        | YES   | Admin, Professor | Get one inventory               | inventory_id                  | { inventory }                           |
 | PUT    | /inventories/:inventoryId        | YES   | Admin | Update inventory                | inventory_id                  | "Inventory updated"                     |
 | POST   | /inventories                  | YES   | Admin | Create one inventory            | req.body                   | "Inventory created"                     |
 | DELETE | /inventories/:inventoryId        | YES   | Admin | Remove one inventory            | inventory_id                  | "Inventory deleted"                     |
