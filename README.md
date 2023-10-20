@@ -1,27 +1,27 @@
 # SchoolProyect
 
-# Proyect description
+## Proyect description
 Welcome to the School Administration API, a Node.js-based project designed to simplify and streamline the management of a school's administrative tasks. This API provides a robust foundation for creating, updating, and retrieving essential data related to students, teachers, courses, and more.
 
 
-# Requeriments
+## Requeriments
 
 - Nodejs
 - Database(Change .env-> Dialect with the one you use)
 
-# Installation
+## Installation
 
 To get started with the School Administration API, just get into the repo and run:
 
 ``` npm i ```
 
-# Usage
+## Usage
 
 Create .env file to your own settings. To start the api server just run:
 
 ``` node index.js```
 
-# Endpoints
+## Endpoints
 
 ### Students
 
@@ -83,32 +83,32 @@ Create .env file to your own settings. To start the api server just run:
 | POST   | /members                  | YES   | Admin | Create one user            | req.body                   | "Member created"                     |
 | DELETE | /members/:memberId        | YES   | Members | Remove one user            | member_id                  | "Member deleted"                     |
 
-# Data structure and models
+## Data structure and models
 
 ![image](https://github.com/alvaroem17/SchoolProyect/assets/57074112/5e7322fa-3205-48cd-be89-1d961836abee)
 
-## Relations
+### Relations
 
-### Many to many
+#### Many to many
 - Ref: "employees"."id" < "classroomTeacher"."teacherId"
 - Ref: "classroom"."id" < "classroomTeacher"."classroomId"
 
-### One to many
+#### One to many
 - Ref: "roles"."id" < "employees"."rolId"
 - Ref: "subjects"."id" < "employees"."subjectsId"
 - Ref: "students"."classroomId" < "classroom"."id"
 - Ref: "classroom"."id" < "inventory"."classroomId"
 
-### One to one
+#### One to one
 - Ref: "contactInfo"."id" - "students"."contactId"
 
-# Authorization
+## Authorization
 
 - Administrator Role: Administrators have full access to all functionalities. They can make requests and access all tables, including employees, students, classrooms, inventory, roles, and subjects.
 - Teacher Role: Teachers have limited access. They can only view information related to students and classrooms. They do not have permissions to perform actions on other tables.
 - Other Roles: All other roles do not have any access rights. They cannot view or interact with any of the tables and their data.
 
-# Technologies
+## Technologies
 
 - ![Node.js](https://img.shields.io/badge/Node.js-8CC84B?style=for-the-badge&logo=node.js&logoColor=white) **Node.js**
 - ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white) **Express**
@@ -117,7 +117,7 @@ Create .env file to your own settings. To start the api server just run:
 - ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) **JavaScript (JS)**
 
 
-# Authors
+## Authors
 
 - Jorge Gil de Arana Vega
 - Sara Betancor León
