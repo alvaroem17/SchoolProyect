@@ -91,10 +91,11 @@ To get started with the School Administration API, just get into the repo and :
 # Technologies
 
 | [Node.js](https://nodejs.org/) | ![Node.js logo](https://nodejs.org/static/images/logo.svg) |
-| [Express](https://expressjs.com/) | ![Express logo](https://expressjs.com/assets/logo.svg) |
-| [Sequelize](https://sequelize.org/) | ![Sequelize logo](https://sequelize.org/assets/logo.svg) |
-| [MySQL](https://www.mysql.com/) | ![MySQL logo](https://www.mysql.com/products/logo/mysql-logo.svg) |
-| [JavaScript](https://www.javascript.com/) | ![JavaScript logo](https://www.javascript.com/images/logo.png) |
+| [Express](https://expressjs.com/) | ![Express logo](https://cdn.jsdelivr.net/gh/expressjs/express@latest/public/images/express.png) |
+| [Sequelize](https://sequelize.org/) | ![Sequelize logo](https://sequelize.org/assets/images/sequelize-logo.svg) |
+| [MySQL](https://www.mysql.com/) | ![MySQL logo](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/MySQL_logo.svg/1200px-MySQL_logo.svg.png) |
+| [JavaScript](https://www.javascript.com/) | ![JavaScript logo](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/JavaScript_logo.svg/1200px-JavaScript_logo.svg.png) |
+
 
 
 # Authors
