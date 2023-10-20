@@ -87,6 +87,20 @@ Create .env file to your own settings. To start the api server just run:
 
 ![image](https://github.com/alvaroem17/SchoolProyect/assets/57074112/5e7322fa-3205-48cd-be89-1d961836abee)
 
+## Relations
+
+### Many to many
+- Ref: "employees"."id" < "classroomTeacher"."teacherId"
+- Ref: "classroom"."id" < "classroomTeacher"."classroomId"
+
+### One to many
+- Ref: "roles"."id" < "employees"."rolId"
+- Ref: "subjects"."id" < "employees"."subjectsId"
+- Ref: "students"."classroomId" < "classroom"."id"
+- Ref: "classroom"."id" < "inventory"."classroomId"
+
+### One to one
+- Ref: "contactInfo"."id" - "students"."contactId"
 
 # Authorization
 
