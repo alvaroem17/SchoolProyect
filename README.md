@@ -70,55 +70,55 @@ Create .env file to your own settings. To start the api server just run:
 | GET    | /students/:studentId/contactInfo       | YES   | Admin | Get one user contactInfo              | student_id                  | { student,contactInfo }                           |
 | PUT    | /students/:studentId        | YES   | Admin | Update user                | student_id                  | "Student updated"                     |
 | POST   | /students                  | YES   | Admin | Create one user            | req.body                   | "Student created"                     |
-| DELETE | /students/:studentId        | YES   | Admin | Remove one user            | student_id                  | "Member deleted"                     |
+| DELETE | /students/:studentId        | YES   | Admin | Remove one user            | student_id                  | "Student deleted"                     |
 
 ### Employees
 
 | METHOD | ENDPOINT                  | TOKEN | ROLE  | DESCRIPTION                  | POST PARAMS                | RETURNS                              |
 | ------ | ------------------------- | ----- | ----- | ---------------------------- | -------------------------- | ------------------------------------ |
-| GET    | /members                  | YES   | Admin | Get all users                | -                          | [{ member }]                         |
-| GET    | /members/:memberId        | YES   | Members | Get one user               | member_id                  | { member }                           |
-| PUT    | /members/:memberId        | YES   | Members | Update user                | member_id                  | "Member updated"                     |
-| POST   | /members                  | YES   | Admin | Create one user            | req.body                   | "Member created"                     |
-| DELETE | /members/:memberId        | YES   | Members | Remove one user            | member_id                  | "Member deleted"                     |
+| GET    | /employees                  | YES   | Admin | Get all employers                | -                          | [{ employee }]                         |
+| GET    | /employees/:employeeId        | YES   | Admin | Get one employee               | employee_id                  | { employee }                           |
+| PUT    | /employees/:employeeId        | YES   | Admin | Update employee                | employee_id                  | "Employee updated"                     |
+| POST   | /employees                  | YES   | Admin | Create one employee            | req.body                   | "Employee created"                     |
+| DELETE | /employees/:employeeId        | YES   | Admin | Remove one employee            | employee_id                  | "Employee deleted"                     |
 
 ### Classroms
 
 | METHOD | ENDPOINT                  | TOKEN | ROLE  | DESCRIPTION                  | POST PARAMS                | RETURNS                              |
 | ------ | ------------------------- | ----- | ----- | ---------------------------- | -------------------------- | ------------------------------------ |
-| GET    | /members                  | YES   | Admin | Get all users                | -                          | [{ member }]                         |
-| GET    | /members/:memberId        | YES   | Members | Get one user               | member_id                  | { member }                           |
-| PUT    | /members/:memberId        | YES   | Members | Update user                | member_id                  | "Member updated"                     |
-| POST   | /members                  | YES   | Admin | Create one user            | req.body                   | "Member created"                     |
-| DELETE | /members/:memberId        | YES   | Members | Remove one user            | member_id                  | "Member deleted"                     |
+| GET    | /classroom                  | YES   | Admin | Get all classrooms                | -                          | [{ classroom }]                         |
+| GET    | /classrooms/:classroomId        | YES   | Members | Get one classroom               | classroom_id                  | { classroom }                           |
+| PUT    | /classrooms/:classroomId        | YES   | Members | Update classroom                | classroom_id                  | "Classroom updated"                     |
+| POST   | /classrooms                  | YES   | Admin | Create one classroom            | req.body                   | "Classroom created"                     |
+| DELETE | /classrooms/:classroomId        | YES   | Members | Remove one classroom            | classroom_id                  | "Classroom deleted"                     |
 
 ### Subjects
 
 | METHOD | ENDPOINT                  | TOKEN | ROLE  | DESCRIPTION                  | POST PARAMS                | RETURNS                              |
 | ------ | ------------------------- | ----- | ----- | ---------------------------- | -------------------------- | ------------------------------------ |
-| GET    | /members                  | YES   | Admin | Get all users                | -                          | [{ member }]                         |
-| GET    | /members/:memberId        | YES   | Members | Get one user               | member_id                  | { member }                           |
-| PUT    | /members/:memberId        | YES   | Members | Update user                | member_id                  | "Member updated"                     |
-| POST   | /members                  | YES   | Admin | Create one user            | req.body                   | "Member created"                     |
-| DELETE | /members/:memberId        | YES   | Members | Remove one user            | member_id                  | "Member deleted"                     |
+| GET    | /subjects                  | YES   | Admin | Get all subjects                | -                          | [{ subject }]                         |
+| GET    | /subjects/:subjectId        | YES   | Admin | Get one subject               | subject_id                  | { subject }                           |
+| PUT    | /subjects/:subjectId        | YES   | Admin | Update subject                | subject_id                  | "Subject updated"                     |
+| POST   | /subjects                  | YES   | Admin | Create one subject            | req.body                   | "Subject created"                     |
+| DELETE | /subjects/:subjectId        | YES   | Admin | Remove one subject            | subject_id                  | "Subject deleted"                     |
 
 ### Inventory
 
 | METHOD | ENDPOINT                  | TOKEN | ROLE  | DESCRIPTION                  | POST PARAMS                | RETURNS                              |
 | ------ | ------------------------- | ----- | ----- | ---------------------------- | -------------------------- | ------------------------------------ |
-| GET    | /members                  | YES   | Admin | Get all users                | -                          | [{ member }]                         |
-| GET    | /members/:memberId        | YES   | Members | Get one user               | member_id                  | { member }                           |
-| PUT    | /members/:memberId        | YES   | Members | Update user                | member_id                  | "Member updated"                     |
-| POST   | /members                  | YES   | Admin | Create one user            | req.body                   | "Member created"                     |
-| DELETE | /members/:memberId        | YES   | Members | Remove one user            | member_id                  | "Member deleted"                     |
+| GET    | /inventories                  | YES   | Admin | Get all inventories                | -                          | [{ inventory }]                         |
+| GET    | /inventories/:inventoryId        | YES   | Admin | Get one inventory               | inventory_id                  | { inventory }                           |
+| PUT    | /inventories/:inventoryId        | YES   | Admin | Update inventory                | inventory_id                  | "Inventory updated"                     |
+| POST   | /inventories                  | YES   | Admin | Create one inventory            | req.body                   | "Inventory created"                     |
+| DELETE | /inventories/:inventoryId        | YES   | Admin | Remove one inventory            | inventory_id                  | "Inventory deleted"                     |
 
 ### Roles
 
 | METHOD | ENDPOINT                  | TOKEN | ROLE  | DESCRIPTION                  | POST PARAMS                | RETURNS                              |
 | ------ | ------------------------- | ----- | ----- | ---------------------------- | -------------------------- | ------------------------------------ |
-| GET    | /members                  | YES   | Admin | Get all users                | -                          | [{ member }]                         |
-| GET    | /members/:memberId        | YES   | Members | Get one user               | member_id                  | { member }                           |
-| PUT    | /members/:memberId        | YES   | Members | Update user                | member_id                  | "Member updated"                     |
-| POST   | /members                  | YES   | Admin | Create one user            | req.body                   | "Member created"                     |
-| DELETE | /members/:memberId        | YES   | Members | Remove one user            | member_id                  | "Member deleted"                     |
+| GET    | /roles                  | YES   | Admin | Get all roles                | -                          | [{ role }]                         |
+| GET    | /roles/:roleId        | YES   | Admin | Get one role               | member_id                  | { role }                           |
+| PUT    | /roles/:roleId        | YES   | Admin | Update role                | member_id                  | "Role updated"                     |
+| POST   | /roles                  | YES   | Admin | Create one role            | req.body                   | "Role created"                     |
+| DELETE | /roles/:roleId        | YES   | Admin | Remove one role            | member_id                  | "Role deleted"                     |
 
