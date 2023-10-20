@@ -78,6 +78,7 @@ Create .env file to your own settings. To start the api server just run:
 | ------ | ------------------------- | ----- | ----- | ---------------------------- | -------------------------- | ------------------------------------ |
 | GET    | /employees                  | YES   | Admin | Get all employers                | -                          | [{ employee }]                         |
 | GET    | /employees/:employeeId        | YES   | Admin | Get one employee               | employee_id                  | { employee }                           |
+| GET    | /employees/:employeeId/classroom        | YES   | Admin | Get one employee classroom              | employee_id                  | { employee,classroom }                           |
 | PUT    | /employees/:employeeId        | YES   | Admin | Update employee                | employee_id                  | "Employee updated"                     |
 | POST   | /employees                  | YES   | Admin | Create one employee            | req.body                   | "Employee created"                     |
 | DELETE | /employees/:employeeId        | YES   | Admin | Remove one employee            | employee_id                  | "Employee deleted"                     |
@@ -87,10 +88,11 @@ Create .env file to your own settings. To start the api server just run:
 | METHOD | ENDPOINT                  | TOKEN | ROLE  | DESCRIPTION                  | POST PARAMS                | RETURNS                              |
 | ------ | ------------------------- | ----- | ----- | ---------------------------- | -------------------------- | ------------------------------------ |
 | GET    | /classroom                  | YES   | Admin | Get all classrooms                | -                          | [{ classroom }]                         |
-| GET    | /classrooms/:classroomId        | YES   | Members | Get one classroom               | classroom_id                  | { classroom }                           |
-| PUT    | /classrooms/:classroomId        | YES   | Members | Update classroom                | classroom_id                  | "Classroom updated"                     |
+| GET    | /classrooms/:classroomId        | YES   | Admin | Get one classroom               | classroom_id                  | { classroom }                           |
+| GET    | /classrooms/:classroomId/employees      | YES   | Admin | Get one classroom teacher             | classroom_id                  | { classroom,teacher }                           |
+| PUT    | /classrooms/:classroomId        | YES   | Admin | Update classroom                | classroom_id                  | "Classroom updated"                     |
 | POST   | /classrooms                  | YES   | Admin | Create one classroom            | req.body                   | "Classroom created"                     |
-| DELETE | /classrooms/:classroomId        | YES   | Members | Remove one classroom            | classroom_id                  | "Classroom deleted"                     |
+| DELETE | /classrooms/:classroomId        | YES   | Admin | Remove one classroom            | classroom_id                  | "Classroom deleted"                     |
 
 ### Subjects
 
