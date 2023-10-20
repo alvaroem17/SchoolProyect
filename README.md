@@ -100,6 +100,7 @@ To get started with the School Administration API, just get into the repo and :
 ) MySQL
 - ![JavaScript](![image](https://github.com/alvaroem17/SchoolProyect/assets/140712461/cf38245e-be43-49dc-b874-e7bc4a94e5fc)
 ) JavaScript (JS)
+![GitHub Logo](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
 
 
 # Authors
