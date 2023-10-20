@@ -90,12 +90,11 @@ To get started with the School Administration API, just get into the repo and :
 
 # Technologies
 
-| [Node.js](https://nodejs.org/) | ![Node.js logo](https://nodejs.org/static/images/logo.svg) |
-| [Express](https://expressjs.com/) | ![Express logo](https://cdn.jsdelivr.net/gh/expressjs/express@latest/public/images/express.png) |
-| [Sequelize](https://sequelize.org/) | ![Sequelize logo](https://sequelize.org/assets/images/sequelize-logo.svg) |
-| [MySQL](https://www.mysql.com/) | ![MySQL logo](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/MySQL_logo.svg/1200px-MySQL_logo.svg.png) |
-| [JavaScript](https://www.javascript.com/) | ![JavaScript logo](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/JavaScript_logo.svg/1200px-JavaScript_logo.svg.png) |
-
+- ![Node.js](https://img.shields.io/badge/Node.js-8CC84B?style=for-the-badge&logo=node.js&logoColor=white) **Node.js**
+- ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white) **Express**
+- ![Sequelize](https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=sequelize&logoColor=white) **Sequelize**
+- ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white) **MySQL**
+- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) **JavaScript (JS)**
 
 
 # Authors
