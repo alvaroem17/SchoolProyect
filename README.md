@@ -124,3 +124,13 @@ Create .env file to your own settings. To start the api server just run:
 | POST   | /roles                  | YES   | Admin | Create one role            | req.body                   | "Role created"                     |
 | DELETE | /roles/:roleId        | YES   | Admin | Remove one role            | member_id                  | "Role deleted"                     |
 
+### ContactInfo
+
+| METHOD | ENDPOINT                  | TOKEN | ROLE  | DESCRIPTION                  | POST PARAMS                | RETURNS                              |
+| ------ | ------------------------- | ----- | ----- | ---------------------------- | -------------------------- | ------------------------------------ |
+| GET    | /contactInfo                  | YES   | Admin | Get all contactInfo                | -                          | [{ contactInfo }]                         |
+| GET    | /contactInfo/:contactInfoId        | YES   | Admin | Get one contactInfo               | contactInfo_id                  | { contactInfo }                           |
+| GET    | /contactInfo/:contactInfoId/student       | YES   | Admin | Get one contactInfo user             | contactInfo_id                  | { student,contactInfo }                           |
+| PUT    | /contactInfo/:contactInfoId        | YES   | Admin | Update contactInfo                | contactInfo_id                  | "contactInfo updated"                     |
+| POST   | /contactInfo                  | YES   | Admin | Create one contactInfo            | req.body                   | "contactInfo created"                     |
+| DELETE | /contactInfo/:contactInfoId        | YES   | Admin | Remove one contactInfo            | contactInfo_id                  | "contactInfo deleted"                     |
