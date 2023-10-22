@@ -1,23 +1,22 @@
-const { sequelize, checkConnection, syncModels } = require("./database/index")
+require('dotenv').config()
+const { checkConnection, syncModels } = require("./database/index")
+const setRelations = require("./database/model")
+
 const express = require('express')
 const cors = require('cors')
 const morgan = require('morgan')
-require('dotenv').config()
-const app = express()
-
 
 async function connectDB() {
     await checkConnection()
-    //setRelations()
-    //await syncModels()
+    setRelations()
+    await syncModels()
 }
 
 function launchServer() {
-    app.use(cors()).use(morgan('dev')).use(express.json())//.use('/api', require('./api/routes'))
-        .listen(process.env.PORT, () => console.log('Server listening on port 3000'))
+    const app = express()
+    
+    app.use(cors()).use(morgan('dev')).use(express.json()).listen(process.env.PORT, () => console.log('Server listening on port 3000'))//.use('/api', require('./api/routes'))
 }
-
-
 
 async function startApi() {
     connectDB()
