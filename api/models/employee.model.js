@@ -24,7 +24,7 @@ const Employee = sequelize.define(
         dni: {
 			type: DataTypes.INTEGER,
         },
-        rolId: {
+        roleId: {
             type: DataTypes.INTEGER
 		},
         subjectId: {
