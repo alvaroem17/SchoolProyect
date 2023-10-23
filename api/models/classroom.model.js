@@ -31,3 +31,4 @@ const ClassRoom = sequelize.define(
 		}
     },
 )
+module.exports=ClassRoom
