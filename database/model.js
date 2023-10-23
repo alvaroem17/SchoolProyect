@@ -3,6 +3,9 @@ const ClassRoom = require('../api/models/classroom.model')
 const Inventory = require('../api/models/inventory.model')
 const Student = require('../api/models/student.model')
 const Roles = require('../api/models/roles.model')
+const ContactInfo=require('../api/models/contactInfo.model')
+const Subject = require('../api/models/subject.model')
+
 
 function addRelationsToModels() {
 	try {
@@ -12,5 +15,6 @@ function addRelationsToModels() {
 		throw error
 	}
 }
+
 
 module.exports = addRelationsToModels
