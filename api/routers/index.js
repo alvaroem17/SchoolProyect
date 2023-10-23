@@ -14,4 +14,6 @@ router.use('/subjects',require('./subject.router.js'))
 
 router.use('/contactinfo', require('./contactInfo.router.js'))
 
+router.use('/auth', require('./auth.router.js'))
+
 module.exports=router
