@@ -10,4 +10,7 @@ router.use('/students', require('./student.router.js'))
 
 router.use('/roles', require('./roles.router.js'))
 
+router.use('/subjects',require('./subject.router.js'))
+
+
 module.exports=router

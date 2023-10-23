@@ -1,4 +1,7 @@
-/* const Subject= sequelize.define(
+const { DataTypes } = require('sequelize')
+const { sequelize } = require('../../database')
+
+const Subject= sequelize.define(
     'subjects',
     {
 		name: {
@@ -23,4 +26,6 @@
             }
 		}
     },
-) */
+) 
+
+module.exports=Subject
