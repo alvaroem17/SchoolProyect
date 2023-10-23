@@ -10,4 +10,6 @@ router.put('/:id',checkAuth, updateStudent)
 router.delete('/:id',checkAuth, deleteStudent)
 
 
+
+
 module.exports=router
