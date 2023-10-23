@@ -1,4 +1,6 @@
 const Employee = require('../api/models/employee.model')
+const ClassRoom = require('../api/models/classroom.model')
+const Inventory = require('../api/models/inventory.model')
 
 function addRelationsToModels() {
 	try {

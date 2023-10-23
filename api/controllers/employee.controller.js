@@ -11,4 +11,7 @@ async function getAllEmployees(req, res) {
     }
 }
 
-module.exports={ getAllEmployees }
+
+
+
+module.exports = { getAllEmployees }
