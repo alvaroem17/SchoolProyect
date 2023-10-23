@@ -1,4 +1,17 @@
 const Student = require('../models/student.model')
+const ContactInfo = require('../models/contactInfo.model')
+
+async function getOneContactInfoWithStudent(req, res) {
+    try {
+        const student = await Student.findOne({
+            where: { id: req.params.id }
+        })
+        const contactInfo = await student.getContactInfo()
+        return res.status(200).json({student, contactInfo})
+    } catch (error) {
+        console.error(error.message)
+    }
+}
 
 async function getAllStudents(req, res) {
 
@@ -82,4 +95,4 @@ where : {
 }
 
 }
-module.exports = {getAllStudents, getOneStudent, createStudent, updateStudent, deleteStudent}
+module.exports = {getOneContactInfoWithStudent,getAllStudents, getOneStudent, createStudent, updateStudent, deleteStudent}

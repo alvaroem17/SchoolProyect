@@ -1,4 +1,7 @@
 const ContactInfo = require('../models/contactInfo.model')
+const Student = require('../models/contactInfo.model')
+
+
 
 async function getAllContactInfos(req, res) {
 
@@ -65,5 +68,6 @@ module.exports = {
     getOneContactInfo,
     updateContactInfo,
     createContactInfo,
-    deleteContactInfo
+    deleteContactInfo,
+    
 }
