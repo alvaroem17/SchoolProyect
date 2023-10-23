@@ -1,4 +1,6 @@
 const Classroom = require('../models/classroom.model')
+const Employee = require('../models/employee.model')
+const { Op } = require('sequelize')
 
 async function getAllClassrooms(req, res) {
 
@@ -23,19 +25,24 @@ async function getOneClassroom(req, res) {
 	}
 }
 
-/* async function getOneClassroomTeacher(req, res) {
+ async function getOneClassroomEmployee(req, res) {
 	try {
-		const classroom = await Classroom.findByPk(req.params.id)
-		if (user) {
+		const classroom = await Classroom.findOne({
+			where: {id: req.params.classroomId},
+			include: {
+				model: Employee,
+				through: {
+					attributes: []
+				}
+			} 
+		})
 			return res.status(200).json(classroom)
-		} else {
-			return res.status(404).send('Classroom not found')
-		}
+		
 	} catch (error) {
 		res.status(500).send(error.message)
 	}
 }
- */
+  
 
 async function createClassroom(req, res) {
 	try {
@@ -82,4 +89,4 @@ async function deleteClassroom(req, res) {
 }
 
 
-module.exports={ getAllClassrooms , getOneClassroom, createClassroom, updateClassroom, deleteClassroom}
+module.exports={ getAllClassrooms , getOneClassroom,getOneClassroomEmployee,createClassroom, updateClassroom, deleteClassroom}
