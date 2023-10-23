@@ -119,10 +119,10 @@ Create .env file to your own settings. To start the api server just run:
 | METHOD | ENDPOINT                  | TOKEN | ROLE  | DESCRIPTION                  | POST PARAMS                | RETURNS                              |
 | ------ | ------------------------- | ----- | ----- | ---------------------------- | -------------------------- | ------------------------------------ |
 | GET    | /roles                  | YES   | Admin | Get all roles                | -                          | [{ role }]                         |
-| GET    | /roles/:roleId        | YES   | Admin | Get one role               | member_id                  | { role }                           |
-| PUT    | /roles/:roleId        | YES   | Admin | Update role                | member_id                  | "Role updated"                     |
+| GET    | /roles/:roleId        | YES   | Admin | Get one role               | role_id                  | { role }                           |
+| PUT    | /roles/:roleId        | YES   | Admin | Update role                | role_id                  | "Role updated"                     |
 | POST   | /roles                  | YES   | Admin | Create one role            | req.body                   | "Role created"                     |
-| DELETE | /roles/:roleId        | YES   | Admin | Remove one role            | member_id                  | "Role deleted"                     |
+| DELETE | /roles/:roleId        | YES   | Admin | Remove one role            | role_id                  | "Role deleted"                     |
 
 ### ContactInfo
 

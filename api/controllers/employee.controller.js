@@ -1,4 +1,5 @@
 const Employee = require('../models/employee.model')
+const ClassRoom = require('../models/classroom.model')
 
 async function getAllEmployees(req, res) {
 
@@ -17,6 +18,23 @@ async function getOneEmployee(req, res) {
         return res.status(200).json(employee)
     } catch (error) {
         console.log(error.message)
+    }
+}
+
+async function getEmployeeClassroom(req, res) {
+    try {
+        const employee = await Employee.findOne({
+            where: { id: req.params.employeeId},
+            include: {
+                model: ClassRoom,
+                through: {
+                    attributes: []
+                }
+            }
+        })
+        return res.status(200).json(employee)
+    } catch (error) {
+        console.error(error.message)
     }
 }
 
@@ -63,6 +81,7 @@ async function deleteEmployee(req, res) {
 module.exports={ 
     getAllEmployees,
     getOneEmployee,
+    getEmployeeClassroom,
     updateEmployee,
     createEmployee,
     deleteEmployee
