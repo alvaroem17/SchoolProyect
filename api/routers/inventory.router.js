@@ -1,10 +1,11 @@
 const router = require('express').Router()
+const { checkAuth } = require('../middleware')
 const {getOneInventory,createInventory, getAllInventories, updateInventory, deleteInventory} = require('../controllers/inventory.controller')
 
-router.get('/', getAllInventories)
-router.get('/:id', getOneInventory)
-router.post('/', createInventory)
-router.put('/:id', updateInventory)
-router.delete('/:id', deleteInventory)
+router.get('/', checkAuth, getAllInventories)
+router.get('/:id',checkAuth, getOneInventory)
+router.post('/',checkAuth, createInventory)
+router.put('/:id',checkAuth, updateInventory)
+router.delete('/:id', checkAuth,deleteInventory)
 
 module.exports=router
