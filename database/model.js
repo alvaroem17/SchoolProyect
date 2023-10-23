@@ -9,7 +9,27 @@ const Subject = require('../api/models/subject.model')
 
 function addRelationsToModels() {
 	try {
-       //add models associations
+       //One to one
+		Student.hasOne(ContactInfo)
+		ContactInfo.belongsTo(Student)
+
+		//Many to many
+		Employee.belongsToMany(ClassRoom, { through: 'classroom_teacher' })
+		ClassRoom.belongsToMany(Employee, { through: 'classroom_teacher' })
+
+		//One to many
+		Roles.hasMany(Employee)
+		Employee.belongsTo(Roles)
+
+		Subject.hasMany(Employee)
+		Employee.belongsTo(Subject)
+
+		ClassRoom.hasMany(Student)
+		Student.belongsTo(ClassRoom)
+
+		ClassRoom.hasMany(Inventory)
+		Inventory.belongsTo(ClassRoom)
+
 		console.log('Relations added to all models')
 	} catch (error) {
 		throw error
