@@ -1,20 +1,13 @@
-const { DataTypes } = require('sequelize')
-const { sequelize } = require('../../database')
-
-const ClassRoom = sequelize.define(
-    'classroom',
+/* const Subject= sequelize.define(
+    'subjects',
     {
 		name: {
 			type: DataTypes.STRING,
-	
+			allowNull: false,
 		},
-		floor: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
+		description: {
+            type: DataTypes.STRING,
         
-        capacity: {
-			type: DataTypes.INTEGER,
         },
         
         createdAt: {
@@ -30,5 +23,4 @@ const ClassRoom = sequelize.define(
             }
 		}
     },
-)
-module.exports=ClassRoom
+) */
