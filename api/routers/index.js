@@ -8,4 +8,6 @@ router.use('/classrooms',require('./classroom.router.js'))
 
 router.use('/students', require('./student.router.js'))
 
+router.use('/contactinfo', require('./contactInfo.router.js'))
+
 module.exports=router

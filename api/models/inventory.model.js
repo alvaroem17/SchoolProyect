@@ -19,11 +19,19 @@ reference : {
 
 type : DataTypes.INTEGER
 
+}, 
+createdAt: {
+    type: DataTypes.DATE,
+    defaultValue: function () {
+        return new Date()
+    }
+},
+updatedAt: {
+    type: DataTypes.DATE,
+    defaultValue: function () {
+        return new Date()
+    }
 }
-}, {
-
-timestamps:false
-
 })
 
 module.exports=Inventory
