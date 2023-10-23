@@ -19,10 +19,18 @@ lunch : {
 
 type : DataTypes.BOOLEAN
 
-} 
-}, 
-{
-    timestamps:false
+},  createdAt: {
+    type: DataTypes.DATE,
+    defaultValue: function () {
+        return new Date()
+    }
+},
+updatedAt: {
+    type: DataTypes.DATE,
+    defaultValue: function () {
+        return new Date()
+    }
+}
 })
 
 

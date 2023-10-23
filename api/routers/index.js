@@ -12,5 +12,6 @@ router.use('/roles', require('./roles.router.js'))
 
 router.use('/subjects',require('./subject.router.js'))
 
+router.use('/contactinfo', require('./contactInfo.router.js'))
 
 module.exports=router
