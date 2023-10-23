@@ -1,14 +1,18 @@
 const router = require('express').Router()
 
+
 // /contactInfo/:contactInfoId/student
+
+
+const { checkAuth } = require('../middleware')
 
 const { getAllContactInfos,getOneContactInfo, updateContactInfo, createContactInfo, deleteContactInfo} = require('../controllers/contactInfo.controller')
 
-router.get('/', getAllContactInfos)
-router.get('/:id', getOneContactInfo)
-router.post('/', createContactInfo)
-router.put('/:id', updateContactInfo)
-router.delete('/:id', deleteContactInfo)
+router.get('/',checkAuth ,getAllContactInfos)
+router.get('/:id',checkAuth , getOneContactInfo)
+router.post('/', checkAuth ,createContactInfo)
+router.put('/:id',checkAuth , updateContactInfo)
+router.delete('/:id',checkAuth , deleteContactInfo)
 
 
 

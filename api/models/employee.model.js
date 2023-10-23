@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize')
+const { DataTypes, Op, Model } = require('sequelize')
 const { sequelize } = require('../../database')
 
 const Employee = sequelize.define(
@@ -20,6 +20,10 @@ const Employee = sequelize.define(
                     msg: "Error: Wrong email format."
                 }
             }
+        },
+        password: {
+			type: DataTypes.STRING,
+            allowNull: false,
         },
         dni: {
 			type: DataTypes.INTEGER,
