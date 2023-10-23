@@ -6,5 +6,6 @@ router.use('/inventories', require('./inventory.router.js'))
 
 router.use('/classrooms',require('./classroom.router.js'))
 
+router.use('/students', require('./student.router.js'))
 
 module.exports=router
