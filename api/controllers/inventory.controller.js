@@ -63,40 +63,42 @@ async function updateInventory(req, res) {
 
 }
 
-async function deleteInventory(req,res) {
+async function deleteInventory(req, res) {
 
-try {
-    const inventory = await Inventory.destroy({
+    try {
+        const inventory = await Inventory.destroy({
 
-where : {
+            where: {
 
 
-    id : req.params.id
-}
+                id: req.params.id
+            }
 
-    })
+        })
 
-    if (inventory) {
-        return res.status(200).json('Inventory has been deleted')
-    } else {
-        return res.status(404).send('Inventory not found')
+        if (inventory) {
+            return res.status(200).json('Inventory has been deleted')
+        } else {
+            return res.status(404).send('Inventory not found')
+        }
+    } catch (error) {
+        return res.status(500).send(error.message)
     }
-} catch (error) {
-    return res.status(500).send(error.message)
-}
 
 }
 
 async function getCountInventory(req, res) {
     try {
-const inventoryCount = await Inventory.findAll({
+    const inventoryCount = await Inventory.findAll({
+        where: req.query
+    })
+        return res.status(200).json(inventoryCount.length);
+    
 
-})
-            return res.status(200).json( inventoryCount.length);
     } catch (error) {
         return res.status(500).send(error.message);
     }
 }
 
 
-module.exports = { getAllInventories, getOneInventory, createInventory, updateInventory, deleteInventory,getCountInventory }
+module.exports = { getAllInventories, getOneInventory, createInventory, updateInventory, deleteInventory, getCountInventory }
