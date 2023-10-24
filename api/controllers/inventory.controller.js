@@ -1,4 +1,5 @@
 
+const { sequelize } = require('../../database')
 const Inventory = require('../models/inventory.model')
 
 
@@ -86,4 +87,16 @@ where : {
 
 }
 
-module.exports = { getAllInventories, getOneInventory, createInventory, updateInventory, deleteInventory }
+async function getCountInventory(req, res) {
+    try {
+const inventoryCount = await Inventory.findAll({
+
+})
+            return res.status(200).json( inventoryCount.length);
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
+
+module.exports = { getAllInventories, getOneInventory, createInventory, updateInventory, deleteInventory,getCountInventory }
