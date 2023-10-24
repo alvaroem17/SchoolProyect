@@ -20,5 +20,20 @@ function checkAdmin(req, res, next) {
         next()  // If the user has 'admin' role, we let him access the following function in the route.
     }
 }
+function validateDni (req, res, next) {
+    const dni = req.body.dni
+    const dniRegex = /^[0-9]{8}[A-Z]$/
 
-module.exports = { checkAuth, checkAdmin }
+    if (dniRegex.test(dni)){
+     next()
+    } else {
+      res.status(400).json({ error: 'DNI no válido' })
+    }
+
+  }
+  
+  
+ 
+
+
+module.exports = { checkAuth, checkAdmin ,validateDni}
