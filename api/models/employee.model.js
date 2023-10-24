@@ -26,7 +26,12 @@ const Employee = sequelize.define(
             allowNull: false,
         },
         dni: {
-			type: DataTypes.INTEGER,
+			type: DataTypes.STRING,
+             validate: {
+                is: {
+                    args: /^[0-9]{8}[A-Z]$/, 
+                    msg: "Error: Wrong dni format."
+             }
         },
         roleId: {
             type: DataTypes.INTEGER
@@ -47,6 +52,6 @@ const Employee = sequelize.define(
             }
 		}
     },
-)
+})
 
 module.exports=Employee

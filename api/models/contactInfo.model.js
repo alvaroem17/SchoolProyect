@@ -6,9 +6,14 @@ const ContactInfo = sequelize.define('contactInfo', {
 
 
 dni : {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
+    validate: {
+        is: {
+            args: /^[0-9]{8}[A-Z]$/, 
+            msg: "Error: Wrong dni format."
+     }
 },
-
+},
 phone : {
 
     type: DataTypes.INTEGER
