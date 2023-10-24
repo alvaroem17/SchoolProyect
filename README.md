@@ -65,8 +65,8 @@ Create .env file to your own settings. To start the api server just run:
 
 | METHOD | ENDPOINT                  | TOKEN | ROLE  | DESCRIPTION                  | POST PARAMS                | RETURNS                              |
 | ------ | ------------------------- | ----- | ----- | ---------------------------- | -------------------------- | ------------------------------------ |
-| GET    | /students                  | YES   | Admin,professor | Get all users                | -                          | [{ student }]                         |
-| GET    | /students/:studentId        | YES   | Admin,professor | Get one user               | student_id                  | { student }                           |
+| GET    | /students                  | YES   | Admin,teacher | Get all users                | -                          | [{ student }]                         |
+| GET    | /students/:studentId        | YES   | Admin,teacher | Get one user               | student_id                  | { student }                           |
 | GET    | /students/:studentId/contactInfo       | YES   | Admin | Get one user contactInfo              | student_id                  | { student,contactInfo }                           |
 | PUT    | /students/:studentId        | YES   | Admin | Update user                | student_id                  | "Student updated"                     |
 | POST   | /students                  | YES   | Admin | Create one user            | req.body                   | "Student created"                     |
@@ -87,8 +87,8 @@ Create .env file to your own settings. To start the api server just run:
 
 | METHOD | ENDPOINT                  | TOKEN | ROLE  | DESCRIPTION                  | POST PARAMS                | RETURNS                              |
 | ------ | ------------------------- | ----- | ----- | ---------------------------- | -------------------------- | ------------------------------------ |
-| GET    | /classroom                  | YES   | Admin | Get all classrooms                | -                          | [{ classroom }]                         |
-| GET    | /classrooms/:classroomId        | YES   | Admin | Get one classroom               | classroom_id                  | { classroom }                           |
+| GET    | /classroom                  | YES   | Admin,teacher | Get all classrooms                | -                          | [{ classroom }]                         |
+| GET    | /classrooms/:classroomId        | YES   | Admin,teacher | Get one classroom               | classroom_id                  | { classroom }                           |
 | GET    | /classrooms/:classroomId/employees      | YES   | Admin | Get one classroom teacher             | classroom_id                  | { classroom,teacher }                           |
 | PUT    | /classrooms/:classroomId        | YES   | Admin | Update classroom                | classroom_id                  | "Classroom updated"                     |
 | POST   | /classrooms                  | YES   | Admin | Create one classroom            | req.body                   | "Classroom created"                     |
@@ -108,8 +108,8 @@ Create .env file to your own settings. To start the api server just run:
 
 | METHOD | ENDPOINT                  | TOKEN | ROLE  | DESCRIPTION                  | POST PARAMS                | RETURNS                              |
 | ------ | ------------------------- | ----- | ----- | ---------------------------- | -------------------------- | ------------------------------------ |
-| GET    | /inventories                  | YES   | Admin, Professor | Get all inventories                | -                          | [{ inventory }]                         |
-| GET    | /inventories/:inventoryId        | YES   | Admin, Professor | Get one inventory               | inventory_id                  | { inventory }                           |
+| GET    | /inventories                  | YES   | Admin | Get all inventories                | -                          | [{ inventory }]                         |
+| GET    | /inventories/:inventoryId        | YES   | Admin | Get one inventory               | inventory_id                  | { inventory }                           |
 | GET    | /inventories/total       | YES   | Admin | Get total count               | -                 | total                           |
 | PUT    | /inventories/:inventoryId        | YES   | Admin | Update inventory                | inventory_id                  | "Inventory updated"                     |
 | POST   | /inventories                  | YES   | Admin | Create one inventory            | req.body                   | "Inventory created"                     |
