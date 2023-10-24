@@ -20,6 +20,17 @@ function checkAdmin(req, res, next) {
         next()  // If the user has 'admin' role, we let him access the following function in the route.
     }
 }
+function validateDni (req, res, next) {
+    const dni = req.body.dni
+    const dniRegex = /^[0-9]{8}[A-Z]$/
+    
+  if (dniRegex.test(dni)){
+     next()
+    } else {
+      res.status(400).json({ error: 'DNI no válido' })
+    }
+
+  }
 
 function checkEmail(req, res, next) {
     const regexp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -33,6 +44,10 @@ function checkEmail(req, res, next) {
 
 
 
+  
+  
+  
+ 
 
 
-module.exports = { checkAuth, checkAdmin, checkEmail }
+module.exports = { checkAuth, checkAdmin ,checkEmail,validateDni}
