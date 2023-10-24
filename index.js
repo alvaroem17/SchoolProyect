@@ -9,7 +9,7 @@ const morgan = require('morgan')
 async function connectDB() {
     await checkConnection()
     setRelations()
-    await syncModels('alter')
+    await syncModels()
 }
 
 function launchServer() {
