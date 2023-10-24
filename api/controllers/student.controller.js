@@ -1,5 +1,6 @@
 const Student = require('../models/student.model')
 const ContactInfo = require('../models/contactInfo.model')
+const { where } = require('sequelize')
 
 async function getOneContactInfoWithStudent(req, res) {
     try {
@@ -95,4 +96,17 @@ where : {
 }
 
 }
-module.exports = {getOneContactInfoWithStudent,getAllStudents, getOneStudent, createStudent, updateStudent, deleteStudent}
+async function getCountStudents(req, res) {
+    try {
+    const studentCount = await Student.findAll({
+        where: req.query
+       
+    })
+        return res.status(200).json(studentCount.length);
+    
+
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+module.exports = {getOneContactInfoWithStudent,getAllStudents, getOneStudent, createStudent, updateStudent, deleteStudent,getCountStudents}

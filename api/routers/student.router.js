@@ -1,9 +1,12 @@
 const router = require('express').Router()
+
 const { checkAuth, checkAdmin } = require('../middleware')
 const {getAllStudents, getOneStudent, createStudent, updateStudent, deleteStudent} = require('../controllers/student.controller')
 
 
+
 router.get('/',checkAuth, getAllStudents)
+router.get('/total',checkAuth,getCountStudents)
 router.get('/:id',checkAuth, getOneStudent)
 router.get('/:id/contactinfo', checkAuth, checkAdmin, )
 router.post('/',checkAuth, checkAdmin, createStudent)
