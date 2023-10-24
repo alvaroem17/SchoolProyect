@@ -4,15 +4,15 @@ const router = require('express').Router()
 // /contactInfo/:contactInfoId/student
 
 
-const { checkAuth } = require('../middleware')
+const { checkAuth, checkAdmin } = require('../middleware')
 
 const { getAllContactInfos,getOneContactInfo, updateContactInfo, createContactInfo, deleteContactInfo} = require('../controllers/contactInfo.controller')
 
-router.get('/',checkAuth ,getAllContactInfos)
-router.get('/:id',checkAuth , getOneContactInfo)
-router.post('/', checkAuth ,createContactInfo)
-router.put('/:id',checkAuth , updateContactInfo)
-router.delete('/:id',checkAuth , deleteContactInfo)
+router.get('/',checkAuth,checkAdmin ,getAllContactInfos)
+router.get('/:id',checkAuth ,checkAdmin, getOneContactInfo)
+router.post('/', checkAuth ,checkAdmin,createContactInfo)
+router.put('/:id',checkAuth ,checkAdmin, updateContactInfo)
+router.delete('/:id',checkAuth ,checkAdmin, deleteContactInfo)
 
 
 
