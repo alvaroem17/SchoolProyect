@@ -42,12 +42,12 @@ function checkEmail(req, res, next) {
     }
   }
 
+function checkPassword(req,res,next) {
+    const password = req.body.password
+    if((password.length < 8) || (password.match(/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+-={}|;:",.<>/?]).{8,}$;/))){
+        return res.send('Your password is invalid')
+    }
+    next()
+}
 
-
-  
-  
-  
- 
-
-
-module.exports = { checkAuth, checkAdmin ,checkEmail,validateDni}
+ module.exports = { checkAuth, checkAdmin ,checkEmail, validateDni, checkPassword }

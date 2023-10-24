@@ -23,7 +23,7 @@ const Employee = sequelize.define(
         },
         password: {
 			type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false
         },
         dni: {
 			type: DataTypes.STRING,
