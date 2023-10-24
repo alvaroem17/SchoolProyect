@@ -23,17 +23,31 @@ function checkAdmin(req, res, next) {
 function validateDni (req, res, next) {
     const dni = req.body.dni
     const dniRegex = /^[0-9]{8}[A-Z]$/
-
-    if (dniRegex.test(dni)){
+    
+  if (dniRegex.test(dni)){
      next()
     } else {
       res.status(400).json({ error: 'DNI no válido' })
     }
 
   }
+
+function checkEmail(req, res, next) {
+    const regexp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  
+    if (!regexp.test(req.body.email)) {
+      return res.status(401).send('checkEmail: Email not Valid');
+    } else {
+      next();
+    }
+  }
+
+
+
+  
   
   
  
 
 
-module.exports = { checkAuth, checkAdmin ,validateDni}
+module.exports = { checkAuth, checkAdmin ,checkEmail,validateDni}
