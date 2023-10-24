@@ -1,6 +1,5 @@
 const Student = require('../models/student.model')
 const ContactInfo = require('../models/contactInfo.model')
-const { where } = require('sequelize')
 
 async function getOneContactInfoWithStudent(req, res) {
     try {
