@@ -7,9 +7,18 @@ function checkAuth(req, res, next) {
         if (err) return res.status(401).send('Token not valid')
         const employee = await Employee.findOne({ where: { email: result.email } })
         if (!employee) return res.status(401).send('User not found')
+        console.log(employee)
         res.locals.employee = employee
         next()
     })
 }
 
-module.exports = { checkAuth }
+function checkAdmin(req, res, next) {
+    if (res.locals.employee.roleId !== 2) {
+        return res.status(401).send('User not authorized')  // Return error for any role different from 'admin'
+    } else {
+        next()  // If the user has 'admin' role, we let him access the following function in the route.
+    }
+}
+
+module.exports = { checkAuth, checkAdmin }
