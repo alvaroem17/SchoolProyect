@@ -1,11 +1,11 @@
 const router = require('express').Router()
-const { checkAuth } = require('../middleware')
+const { checkAuth,checkAdmin } = require('../middleware')
 const { getAllRoles, getOneRol, updateRol, createRol, deleteRol } = require('../controllers/roles.controller')
 
-router.get('/', checkAuth, getAllRoles)
-router.get('/:rolId', checkAuth, getOneRol)
-router.put('/:rolId', checkAuth, updateRol)
-router.post('/', checkAuth, createRol)
-router.delete('/:rolId', checkAuth, deleteRol)
+router.get('/', checkAuth, checkAdmin,getAllRoles)
+router.get('/:rolId', checkAuth, checkAdmin,getOneRol)
+router.put('/:rolId', checkAuth, checkAdmin,updateRol)
+router.post('/', checkAuth, checkAdmin,createRol)
+router.delete('/:rolId', checkAuth, checkAdmin,deleteRol)
 
 module.exports=router
