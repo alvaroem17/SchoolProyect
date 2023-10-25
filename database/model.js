@@ -10,7 +10,7 @@ const Subject = require('../api/models/subject.model')
 function addRelationsToModels() {
 	try {
        //One to one
-		Student.hasOne(ContactInfo)
+		Student.hasOne(ContactInfo,{ foreignKey: 'studentId', onDelete: 'CASCADE', onUpdate: 'CASCADE' })
 		ContactInfo.belongsTo(Student)
 
 		//Many to many
@@ -18,16 +18,16 @@ function addRelationsToModels() {
 		ClassRoom.belongsToMany(Employee, { through: 'classroom_teacher' })
 
 		//One to many
-		Roles.hasMany(Employee)
+		Roles.hasMany(Employee,{ foreignKey: 'roleId', onDelete: 'CASCADE', onUpdate: 'CASCADE' })
 		Employee.belongsTo(Roles)
 
 		Subject.hasMany(Employee)
-		Employee.belongsTo(Subject)
+		Employee.belongsTo(Subject,{ foreignKey: 'subjectId', onDelete: 'CASCADE', onUpdate: 'CASCADE' })
 
-		ClassRoom.hasMany(Student)
+		ClassRoom.hasMany(Student,{ foreignKey: 'classroomId', onDelete: 'CASCADE', onUpdate: 'CASCADE' })
 		Student.belongsTo(ClassRoom)
 
-		ClassRoom.hasMany(Inventory)
+		ClassRoom.hasMany(Inventory,{ foreignKey: 'classroomId', onDelete: 'CASCADE', onUpdate: 'CASCADE' })
 		Inventory.belongsTo(ClassRoom)
 
 		console.log('Relations added to all models')
