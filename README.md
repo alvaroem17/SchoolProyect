@@ -1,6 +1,6 @@
 # SchoolProyect
 
-## Proyect description
+## Project description
 Welcome to the School Administration API, a Node.js-based project designed to simplify and streamline the management of a school's administrative tasks. This API provides a robust foundation for creating, updating, and retrieving essential data related to students, teachers, courses, and more.
 
 ## Authors
