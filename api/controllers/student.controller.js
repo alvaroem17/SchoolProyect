@@ -99,7 +99,6 @@ async function getCountStudents(req, res) {
     try {
     const studentCount = await Student.findAll({
         where: req.query
-       
     })
         return res.status(200).json(studentCount.length);
     

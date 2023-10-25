@@ -33,7 +33,7 @@ async function signUp(req, res) {
     const hashedPassword = bcrypt.hashSync(req.body.password, saltRounds) // Hash the original password with the number we have provided.
 
     req.body.password = hashedPassword // update the body's password with the hased password
-
+    req.body.roleId = 1
 
     try {
         const employee = await Employee.create(req.body) // create the user with the hashed password

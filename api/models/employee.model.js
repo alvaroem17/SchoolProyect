@@ -14,6 +14,7 @@ const Employee = sequelize.define(
         },
         email: {
             type: DataTypes.STRING,
+            unique: true,
             validate: {
                 is: {
                     args: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
@@ -27,11 +28,12 @@ const Employee = sequelize.define(
         },
         dni: {
 			type: DataTypes.STRING,
-             validate: {
+            unique: true,
+            validate: {
                 is: {
                     args: /^[0-9]{8}[A-Z]$/, 
                     msg: "Error: Wrong dni format."
-             }
+            }
         },
         roleId: {
             type: DataTypes.INTEGER
@@ -53,5 +55,11 @@ const Employee = sequelize.define(
 		}
     },
 })
+
+Employee.options.foreignKeyConstraints = {
+    'roleId': {
+        defaultValue: 1,
+    },
+};
 
 module.exports=Employee

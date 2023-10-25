@@ -9,7 +9,7 @@ const ClassRoom = sequelize.define(
 	
 		},
 		floor: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         
