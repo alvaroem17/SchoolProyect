@@ -91,6 +91,7 @@ Create .env file to your own settings. To start the api server just run:
 | GET    | /classroom                  | YES   | Admin,teacher | Get all classrooms                | -                          | [{ classroom }]                         |
 | GET    | /classrooms/:classroomId        | YES   | Admin,teacher | Get one classroom               | classroom_id                  | { classroom }                           |
 | GET    | /classrooms/:classroomId/employees      | YES   | Admin | Get one classroom teacher             | classroom_id                  | { classroom,teacher }                           |
+| GET    | /classrooms/:classroomId/students      | YES   | Admin | Get students in classroom            | classroom_id, querys                  | { classroom,student }                           |
 | PUT    | /classrooms/:classroomId        | YES   | Admin | Update classroom                | classroom_id                  | "Classroom updated"                     |
 | POST   | /classrooms                  | YES   | Admin | Create one classroom            | req.body                   | "Classroom created"                     |
 | DELETE | /classrooms/:classroomId        | YES   | Admin | Remove one classroom            | classroom_id                  | "Classroom deleted"                     |
