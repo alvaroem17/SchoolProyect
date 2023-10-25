@@ -4,7 +4,7 @@ const { getAllEmployees, getOneEmployee, updateEmployee, createEmployee, deleteE
 const { checkConnection } = require('../../database')
 
 
-router.get('/',getAllEmployees)
+router.get('/', checkAuth,getAllEmployees)
 router.get('/:employeeId',checkAuth , checkAdmin,getOneEmployee)
 router.get('/:employeeId/classroom', checkAuth ,checkAdmin,getEmployeeClassroom)
 router.put('/:employeeId', checkAuth, checkEmail, validateDni, checkPassword, checkAdmin,updateEmployee)
