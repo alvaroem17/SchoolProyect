@@ -10,5 +10,4 @@ router.put('/:classroomId', checkAuth,checkAdmin,updateClassroom)
 router.post('/',checkAuth, checkAdmin,createClassroom)
 router.delete('/:classroomId', checkAuth,checkAdmin,deleteClassroom) 
 
-
 module.exports=router

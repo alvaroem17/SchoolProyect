@@ -10,6 +10,4 @@ router.post('/', validateDni,checkAuth ,checkAdmin,createContactInfo)
 router.put('/:id',validateDni,checkAuth ,checkAdmin, updateContactInfo)
 router.delete('/:id',checkAuth ,checkAdmin, deleteContactInfo)
 
-
-
 module.exports=router

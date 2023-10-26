@@ -1,8 +1,6 @@
 const router = require('express').Router()
-
 const { checkAuth, checkAdmin } = require('../middleware')
 const {getStudentsSubject, getAllStudents, getOneStudent, createStudent, updateStudent, deleteStudent,getCountStudents,getOneContactInfoWithStudent} = require('../controllers/student.controller')
-
 
 router.get('/:id/subjects', getStudentsSubject)
 router.get('/',checkAuth, getAllStudents)

@@ -2,7 +2,6 @@ const ContactInfo = require('../models/contactInfo.model')
 const Student = require('../models/contactInfo.model')
 
 async function getAllContactInfos(req, res) {
-
     try {
         const contactInfos = await ContactInfo.findAll()
 
@@ -25,7 +24,9 @@ async function updateContactInfo(req, res) {
     try {
         const [contactInfoExist, contactInfo] = await ContactInfo.update(req.body, {
             returning: true,
-            where: { id: req.params.id }
+            where: {
+                id: req.params.id
+            }
         })
         if (contactInfoExist !== 0) {
             return res.status(200).send('contactInfo updated successfully')
@@ -40,7 +41,10 @@ async function updateContactInfo(req, res) {
 async function createContactInfo(req, res) {
     try {
         const contactInfo = await ContactInfo.create(req.body)
-        return res.status(200).json({ message: 'User created', contactInfo: contactInfo })
+        return res.status(200).json({
+            message: 'User created',
+            contactInfo: contactInfo
+        })
     } catch (error) {
         console.error(error.message)
     }
@@ -49,7 +53,9 @@ async function createContactInfo(req, res) {
 async function deleteContactInfo(req, res) {
     try {
         const contactInfo = await ContactInfo.destroy({
-            where: { id: req.params.id }
+            where: {
+                id: req.params.id
+            }
         })
         if (contactInfo) {
             return res.status(200).send('contactInfo deleted')
@@ -64,10 +70,15 @@ async function deleteContactInfo(req, res) {
 async function getContactInfoStudent(req, res) {
     try {
         const contactinfo = await ContactInfo.findOne({
-            where: { id: req.params.id }
+            where: {
+                id: req.params.id
+            }
         })
         const student = await contactinfo.getStudent()
-        return res.status(200).json({contactinfo, student})
+        return res.status(200).json({
+            contactinfo,
+            student
+        })
     } catch (error) {
         console.error(error.message)
     }
