@@ -126,5 +126,6 @@ async function getStudentsSubject(req, res) {
     }
 }
 
+//Reseting git
 
 module.exports = {getOneContactInfoWithStudent,getAllStudents, getOneStudent, createStudent, updateStudent, deleteStudent,getCountStudents, getStudentsSubject}
