@@ -1,5 +1,6 @@
 const Classroom = require('../models/classroom.model')
 const Employee = require('../models/employee.model')
+const Student = require('../models/student.model')
 const { Op } = require('sequelize')
 
 async function getAllClassrooms(req, res) {
@@ -88,5 +89,17 @@ async function deleteClassroom(req, res) {
 	}
 }
 
+async function getOneClassroomStudent(req, res) {
+	try {
+		const classroom = await Classroom.findByPk(req.params.classroomId)
+		req.query.classroomId =req.params.classroomId
+		const student = await Student.findAll({where: req.query})
+		return res.status(200).json({classroom, student})
+		
+	} catch (error) {
+		res.status(500).send(error.message)
+	}
+}
 
-module.exports={ getAllClassrooms , getOneClassroom,getOneClassroomEmployee,createClassroom, updateClassroom, deleteClassroom}
+
+module.exports={ getAllClassrooms , getOneClassroom,getOneClassroomEmployee,createClassroom, updateClassroom, deleteClassroom, getOneClassroomStudent}
