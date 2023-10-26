@@ -66,13 +66,14 @@ Create .env file to your own settings. To start the api server just run:
 | METHOD | ENDPOINT                  | TOKEN | ROLE  | DESCRIPTION                  | POST PARAMS                | RETURNS                              |
 | ------ | ------------------------- | ----- | ----- | ---------------------------- | -------------------------- | ------------------------------------ |
 | GET    | /students                  | YES   | Admin,teacher | Get all users                | -                          | [{ student }]                         |
+| GET    | /students/:studentId/subjects        | YES   | Admin,teacher | Get Students's subjects               | student_id                  | { student, subject }                           |
 | GET    | /students/:studentId        | YES   | Admin,teacher | Get one user               | student_id                  | { student }                           |
 | GET    | /students/:studentId/contactInfo       | YES   | Admin | Get one user contactInfo              | student_id                  | { student,contactInfo }                           |
 | GET    | /students/total             | YES   | Admin,teacher | Get count of all students | req.query            | total number                               |
 | PUT    | /students/:studentId        | YES   | Admin | Update user                | student_id                  | "Student updated"                     |
 | POST   | /students                  | YES   | Admin | Create one user            | req.body                   | "Student created"                     |
 | DELETE | /students/:studentId        | YES   | Admin | Remove one user            | student_id                  | "Student deleted"                     |
-| GET    | /students/:studentId/subjects        | YES   | Admin,teacher | Get Students's subjects               | student_id                  | { student, subject }                           |
+
 
 ### Employees
 
