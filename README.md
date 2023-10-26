@@ -72,6 +72,7 @@ Create .env file to your own settings. To start the api server just run:
 | PUT    | /students/:studentId        | YES   | Admin | Update user                | student_id                  | "Student updated"                     |
 | POST   | /students                  | YES   | Admin | Create one user            | req.body                   | "Student created"                     |
 | DELETE | /students/:studentId        | YES   | Admin | Remove one user            | student_id                  | "Student deleted"                     |
+| GET    | /students/:studentId/subjects        | YES   | Admin,teacher | Get Students's subjects               | student_id                  | { student, subject }                           |
 
 ### Employees
 
