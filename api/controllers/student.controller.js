@@ -1,5 +1,8 @@
 const Student = require('../models/student.model')
 const ContactInfo = require('../models/contactInfo.model')
+const ClassRoom = require('../models/classroom.model')
+const Subject = require('../models/subject.model')
+const Employee = require('../models/employee.model')
 
 async function getOneContactInfoWithStudent(req, res) {
     try {
@@ -107,4 +110,22 @@ async function getCountStudents(req, res) {
         return res.status(500).send(error.message);
     }
 }
-module.exports = {getOneContactInfoWithStudent,getAllStudents, getOneStudent, createStudent, updateStudent, deleteStudent,getCountStudents}
+
+
+async function getStudentsSubject(req, res) {
+    try {
+        const student = await Student.findOne({
+            where: { id: req.params.id },
+            include: [{  model: ClassRoom, include: [{ model: Employee, include: Subject }] }]
+        })
+        const subject = student.classroom.employees.map(em => em.subject);
+        const name = student.name
+        return res.status(200).json({name,subject})
+    } catch (error) {
+        res.status(500).send(error.message)
+    }
+}
+
+//Reseting git
+
+module.exports = {getOneContactInfoWithStudent,getAllStudents, getOneStudent, createStudent, updateStudent, deleteStudent,getCountStudents, getStudentsSubject}
