@@ -6,7 +6,6 @@ const Roles = require('../api/models/roles.model')
 const ContactInfo=require('../api/models/contactInfo.model')
 const Subject = require('../api/models/subject.model')
 
-
 function addRelationsToModels() {
 	try {
        //One to one
@@ -35,6 +34,5 @@ function addRelationsToModels() {
 		throw error
 	}
 }
-
 
 module.exports = addRelationsToModels

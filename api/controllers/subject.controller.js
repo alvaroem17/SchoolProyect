@@ -1,14 +1,12 @@
-const Subject= require('../models/subject.model')
+const Subject = require('../models/subject.model')
 
 async function getAllSubjects(req, res) {
-
-    try {
-        const subject = await Subject.findAll()
-
-        return res.status(200).json(subject)
-    } catch (error) {
-        res.status(500).send(error.message)
-    }
+	try {
+		const subject = await Subject.findAll()
+		return res.status(200).json(subject)
+	} catch (error) {
+		res.status(500).send(error.message)
+	}
 }
 async function getOneSubject(req, res) {
 	try {
@@ -26,8 +24,11 @@ async function getOneSubject(req, res) {
 
 async function createSubject(req, res) {
 	try {
-		const subject= await Subject.create(req.body)
-		return res.status(200).json({ message: 'Subject created', subject : subject })
+		const subject = await Subject.create(req.body)
+		return res.status(200).json({
+			message: 'Subject created',
+			subject: subject
+		})
 	} catch (error) {
 		res.status(500).send(error.message)
 	}
@@ -41,8 +42,11 @@ async function updateSubject(req, res) {
 				id: req.params.subjectId,
 			},
 		})
-        if (subjectExist !== 0) {
-			return res.status(200).json({ message: 'Subject updated', subject: subject})
+		if (subjectExist !== 0) {
+			return res.status(200).json({
+				message: 'Subject updated',
+				subject: subject
+			})
 		} else {
 			return res.status(404).send('Subject not found')
 		}
@@ -69,4 +73,10 @@ async function deleteSubject(req, res) {
 }
 
 
-module.exports={ getAllSubjects , getOneSubject ,createSubject, updateSubject, deleteSubject}
+module.exports = {
+	getAllSubjects,
+	getOneSubject,
+	createSubject,
+	updateSubject,
+	deleteSubject
+}
